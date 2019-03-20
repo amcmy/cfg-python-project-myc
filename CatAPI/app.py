@@ -1,14 +1,18 @@
+import os
 import requests
 
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+from dotenv import load_dotenv
+load_dotenv() #find dotenv file created, read content, allow app to pull them in
+
 @app.route('/')
 def index():
     response = requests.get(
         'https://api.thecatapi.com/v1/images/search',
-        headers={'x-api-key': '27a8810c-bcf3-4849-bb94-761efc09a65c'}
+        headers={'x-api-key': os.getenv('API_KEY')}
     )
     data = response.json()[0]
     print(data)
@@ -22,10 +26,10 @@ def add_favourite():
 
     response = requests.post(
         'https://api.thecatapi.com/v1/favourites',
-        headers={'x-api-key': '27a8810c-bcf3-4849-bb94-761efc09a65c'},
+        headers={'x-api-key': os.getenv('API_KEY')},
         json={
             'image_id': image_id,
-            'sub_id': 'ggxrlg'
+            'sub_id': os.getenv('SUB_ID')
         }
     )
     data = response.json()
@@ -36,7 +40,7 @@ def add_favourite():
 def see_favourites():
     response = requests.get(
         'https://api.thecatapi.com/v1/favourites?limit=3',
-        headers={'x-api-key': '27a8810c-bcf3-4849-bb94-761efc09a65c'}
+        headers={'x-api-key': os.getenv('API_KEY')}
     )
     data = response.json()
     print(data)
