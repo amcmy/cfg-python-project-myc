@@ -3,7 +3,7 @@ h1 {
   }
   
   body {
-    background-color: GreenYellow ;
+    background-color: rgb(255, 255, 255) ;
   }
 nav ul {
     list-style: none;
