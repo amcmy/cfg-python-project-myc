@@ -3,19 +3,9 @@ h1 {
   }
   
   body {
-    background-color: rgb(164, 212, 224) ;
+    background-color: blue;
   }
-nav ul {
-    list-style: none;
-    font-family: Helvetica, Helvetica;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+
 nav ul {
     list-style: none;
     font-family: Helvetica, Helvetica;
