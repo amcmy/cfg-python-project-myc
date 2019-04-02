@@ -18,7 +18,7 @@ def say_hello():
 
 @app.route("/<name>")
 def say_hello_to1(name):
-    return f"Hello {name}"
+    return f"CFG {name}"
 
 @app.route("/<name>")
 def say_hello_to(name):
