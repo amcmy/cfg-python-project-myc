@@ -20,6 +20,14 @@ def say_hello():
 def say_hello_to1(name):
     return f"Coming soon! {name}"
 
+@app.route("/<dessert>")
+def say_hello_to9(dessert):
+    return f"Coming soon! {dessert}"
+
+@app.route("/<about>")
+def say_hello_to8(about):
+    return f"Coming soon! {about}"
+
 @app.route("/<name>")
 def say_hello_to(name):
   return render_template("index.html", user=name)
